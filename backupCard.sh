@@ -1,3 +1,4 @@
+#!/bin/bash
 ## Backup Raspberry Pi sd card to partclone image ##############################
 #  Assumes a vfat and an ext4 partition
 #  Supports devices /dev/mmcblk* and /dev/sd* 

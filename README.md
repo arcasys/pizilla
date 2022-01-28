@@ -20,3 +20,7 @@ Inserrt the card to be saved or restored in a card reader on your system.
 - the directory containing the backup
 ## Caveats
 The scripts can **destroy data** by design. Please be careful! We cannot be held reliable for any damage or data loss caused b the provided scipts.
+
+**partclone version**: The procedures require partlone version > v0.3 (check with partclone.restore -v). Versions v0.2.x won't work.
+
+It can be a good idea to **shrink the root partition** to make it fit to a card with smaller size before performing the backup (actual size of e.g. a 32G card can vary by manufacturer). It's not a good idea to bypass size checking with partclone -C when restoring the card. This will probably not work. Shrinking can easily be done with gparted. However, this comes with a **pitfall**: gparted changes the PARTUUID without notice and unfortunately the Pi system refers to the PARTUUID in both /boot/cmdline.txt and /etc/fstab. Either you change the the PARTUUID in the these files to the new value or you change the PARTUUID of the card to the old value, Changing the PARTUUID can be done with fdisk (expert functions:x rename:i). This has to be done before performing the backup. 

@@ -1,7 +1,8 @@
-## Restore card partclone image to card
-# Usage: write_card_mmc backup_dir
-
+## Backup Raspberry Pi sd card to partclone image ##############################
+#  Assumes a vfat and an ext4 partition
+#  Supports devices /dev/mmcblk* and /dev/sd* 
 ################################################################################
+
 # Check if root
 
 if [ ! `id -u` -eq 0 ]

@@ -1,7 +1,8 @@
-## Restore card partclone image to card
-# Usage: write_card_mmc backup_dir
-
+#!/bin/bash
+## Restore Raspberry Pi sd card created by backupCard.sh #######################
+#    
 ################################################################################
+
 # Check if root
 
 if [ ! `id -u` -eq 0 ]
